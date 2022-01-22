@@ -12,7 +12,7 @@ const Order: React.FC = () => {
     if (percentageCorrect !== '100.00') return;
     alert('order sent');
   };
-  const handlePriceChange = (e: SyntheticEvent, id: number) => {
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
     const detailCopy = [...order.detail];
     const newPrice = e.target.value;
     const detailUpdated = detailCopy.map(product => {
