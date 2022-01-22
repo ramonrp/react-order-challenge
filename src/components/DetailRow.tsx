@@ -1,15 +1,16 @@
 import { SyntheticEvent } from 'react';
+import { useContextOrder } from '../context/context';
 import { Detail } from './order.model';
 
 interface Props {
   product: Detail;
-  onChangePrice: (e: SyntheticEvent, id: number) => void;
   checked: boolean;
   onChangeCheckbox: () => void;
 }
 
 const DetailRow: React.FC<Props> = props => {
-  const { product, onChangePrice, checked, onChangeCheckbox } = props;
+  const { product, checked, onChangeCheckbox } = props;
+  const { onChangePrice } = useContextOrder();
   return (
     <div>
       <input checked={checked} onChange={onChangeCheckbox} type="checkbox"></input>

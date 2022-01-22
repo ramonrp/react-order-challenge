@@ -1,15 +1,7 @@
 import { formatDate } from '../utils';
-interface Props {
-  id: number;
-  supplier: string;
-  date: string;
-  totalPrice: string;
-  percentageCorrect: string;
-  onSendData: () => void;
-}
-
-const OrderHeader: React.FC<Props> = props => {
-  const { id, supplier, date, totalPrice, onSendData, percentageCorrect } = props;
+import { useContextOrder } from '../context/context';
+const OrderHeader: React.FC = () => {
+  const { id, supplier, date, totalPrice, onSendData, percentageCorrect } = useContextOrder();
   const formattedDate = formatDate(date);
   const isOrderCorrect = percentageCorrect === '100.00';
   return (

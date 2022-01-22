@@ -1,16 +1,9 @@
 import * as React from 'react';
-import { SyntheticEvent } from 'react';
-import { Detail } from './order.model';
 import { DetailRow } from './DetailRow';
-interface Props {
-  detail: Detail[];
-  onChangePrice: (e: SyntheticEvent, id: number) => void;
-  onValidate: (checkbox: boolean[]) => void;
-  onInvalidate: (checkbox: boolean[]) => void;
-}
+import { useContextOrder } from '../context/context';
 
-const OrderDetail: React.FC<Props> = props => {
-  const { detail, onChangePrice, onValidate, onInvalidate } = props;
+const OrderDetail: React.FC = () => {
+  const { detail, onValidate, onInvalidate } = useContextOrder();
   const initialCheckedState = new Array(detail.length).fill(false);
   const [checkedSate, setCheckedState] = React.useState(initialCheckedState);
   const handleInputChange = (position: number) => {
@@ -37,7 +30,6 @@ const OrderDetail: React.FC<Props> = props => {
         <DetailRow
           key={product.id}
           product={product}
-          onChangePrice={onChangePrice}
           checked={checkedSate[index]}
           onChangeCheckbox={() => handleInputChange(index)}
         />
