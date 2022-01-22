@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "date": "Fri Jan 21 2022 12:03:59 GMT+0100 (hora estándar de Europa central)",
+  "supplier": "Lenovo",
+  "detail": [
+    { "id": 1, "status": false, "description": "reactivos Maquinaria", "amount": 2.35 },
+    { "id": 2, "status": true, "description": "recambios impresión", "amount": 2.35 },
+    { "id": 3, "status": false, "description": "soportes plataforma", "amount": 2.35 }
+  ]
+}
