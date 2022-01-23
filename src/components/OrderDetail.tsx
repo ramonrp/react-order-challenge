@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { DetailRow } from './DetailRow';
-import { useContextOrder } from '../context/context';
+import { useContextOrder, validate, invalidate } from '../context/context';
 
 const OrderDetail: React.FC = () => {
-  const { detail, onValidate, onInvalidate } = useContextOrder();
+  const { state, dispatch } = useContextOrder();
+  const { detail } = state;
   const initialCheckedState = new Array(detail.length).fill(false);
   const [checkedSate, setCheckedState] = React.useState(initialCheckedState);
   const handleInputChange = (position: number) => {
@@ -15,11 +16,11 @@ const OrderDetail: React.FC = () => {
   };
 
   const handleValidate = () => {
-    onValidate(checkedSate);
+    validate(dispatch, checkedSate);
     setCheckedState(initialCheckedState);
   };
   const handleInvalidate = () => {
-    onInvalidate(checkedSate);
+    invalidate(dispatch, checkedSate);
     setCheckedState(initialCheckedState);
   };
   return (
