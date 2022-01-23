@@ -1,34 +1,26 @@
-# Webpack 5 boilerplate
+# Order Challenge React
 
-![](https://habrastorage.org/webt/q-/lv/b0/q-lvb0d4li7cpi-hsctistlzooi.png)
+## Description
 
-## Features
+This app is a Challenge from React module of master frontend of lemoncode.Description:
 
-[Webpack 5](https://webpack.js.org/) boilerplate with support of most common loaders and modules:
+- Get an Order and show id, date, prices, and products of each order.
+- Be able to change price of each product and update total price.
+- Multicheckbox to validate / invalidate different products.
+- Be able to send order only in case all products validation is done.
 
-- Webpack 5
-  - html template
-  - imports images, fonts.
-  - sass, [css modules](https://github.com/css-modules/css-modules) with automatic typescript declaration
-  - postcss loader
-  - generates source maps for development.
-  - Dev and Prod config
-  - Bundle analyzer
-  - Suppor for enviroment variables
-- [Babel](https://babeljs.io/)
-  - preset-env
-  - preset react
-- React
-  - [new JSX transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) (no need to import react for using jsx)
-  - with react support (also with [react-refresh](https://www.npmjs.com/package/@pmmmwh/react-refresh-webpack-plugin))
-- Typescript support
-- [Prettier](https://www.npmjs.com/package/prettier)
-- [Webpack dev server](https://webpack.js.org/configuration/dev-server/)
-- [Husky](https://www.npmjs.com/package/husky) prehooks for prettier format.
+## Solution
+
+I solved this challenge with two different approaches:
+
+1. Props and local state.
+2. Context and useReducer.
+
+It's possible to find both solutions in different branches of the proyect.
 
 ## Instalation
 
-Click on the `Use this template` green button at the top - this will make a new github repo with clean commit history. Then clone it and install dependencies:
+Clone repository and and install dependencies:
 
 ```sh
 npm i
